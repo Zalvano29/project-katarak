@@ -29,10 +29,117 @@ except Exception as e:
 # --- STYLING CSS ---
 st.markdown("""
     <style>
-    .stApp { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: white; }
-    div.block-container { background-color: rgba(0, 0, 0, 0.4); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); margin-top: 2rem; max-width: 800px; }
-    div.stButton > button { background-color: #ff4b4b; color: white; border-radius: 12px; height: 3.5rem; width: 100%; font-weight: bold; }
-    div.stButton > button:hover { background-color: #ff6b6b; transform: translateY(-2px); }
+    .stApp {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        color: white;
+    }
+
+    div.block-container {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        margin-top: 2rem;
+        max-width: 800px;
+    }
+
+    @media (max-width: 600px) {
+        div.block-container {
+            padding: 1rem;
+            margin-top: 0.5rem;
+            width: 95%;
+        }
+        h2 {
+            font-size: 1.5rem !important;
+        }
+        .stTabs [data-baseweb="tab"] {
+            font-size: 0.8rem;
+            padding: 0 0.5rem;
+            height: 40px;
+        }
+    }
+
+    .stTabs [data-baseweb="tab-highlight"] {
+        background-color: transparent !important;
+        height: 0px !important;
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 10px;
+        background-color: transparent;
+        margin-bottom: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        white-space: pre-wrap;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        color: white;
+        flex: 1 1 auto;
+        border: none;
+        font-weight: 500;
+        min-width: 120px;
+    }
+
+    .stTabs [data-baseweb="tab"]:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #f0f0f0;
+    }
+
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        background: linear-gradient(90deg, #bd34fe, #ff34b3);
+        color: white;
+        box-shadow: 0 4px 15px rgba(189, 52, 254, 0.4);
+    }
+
+    iframe[title="streamlit_webrtc.component.webrtc_streamer"] {
+        background-color: #000;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        display: block;
+        width: 100%;
+    }
+
+    div.stButton > button {
+        background-color: #ff4b4b;
+        color: white;
+        border-radius: 12px;
+        border: none;
+        height: 3.5rem;
+        width: 100%;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    div.stButton > button:active,
+    div.stButton > button:focus {
+        background-color: #ff4b4b;
+        color: white !important;
+        box-shadow: none;
+        border: none;
+    }
+    
+    div.stButton > button:hover {
+        background-color: #ff6b6b;
+        color: white;
+        box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+        transform: translateY(-2px);
+    }
+    
+    [data-testid="stFileUploader"] {
+        background-color: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        padding: 20px;
+    }
     </style>
 """, unsafe_allow_html=True)
 
