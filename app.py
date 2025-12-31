@@ -149,7 +149,7 @@ tab1, tab2 = st.tabs(["📷 Kamera Real-time", "📂 Upload File Mata"])
 
 # --- TAB 1: REAL-TIME WEBRTC (OPTIMIZED) ---
 with tab1:
-    st.write("Arahkan mata ke kamera. Jika lag, harap maklum karena keterbatasan server gratis.")
+    st.write("Arahkan mata ke kamera. Pastikan pencahayaan bagus untuk hasil yang lebih akurat.")
 
     class VideoProcessor:
         def __init__(self):
