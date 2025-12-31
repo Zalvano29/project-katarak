@@ -7,3 +7,4 @@ av
 numpy
 onnx
 onnxruntime
+matplotlib
