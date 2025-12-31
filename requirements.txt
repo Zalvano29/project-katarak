@@ -5,3 +5,5 @@ ultralytics
 Pillow
 av
 numpy
+onnx
+onnxruntime
